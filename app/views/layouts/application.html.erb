@@ -4,11 +4,26 @@
   <title><%= title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <h1><%= @title %></h1>
-<%= yield %>
+    <div class="container">
+      <header>
+        <%= image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+      </header>
+      <nav class="round">
+        <ul>
+          <li><%=link_to "Home", '#' %></li>
+          <li><%=link_to "Help", '#' %></li>
+          <li><%=link_to "Sign in", '#' %></li>
+        </ul>
+      </nav>
+      <section class="round">
+        <%= yield %>
+      </section>
+
+    </div>
 
 </body>
 </html>
